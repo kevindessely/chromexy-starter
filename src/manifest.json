@@ -13,5 +13,6 @@
       "js": ["content.js"]
     }
   ],
+  "browser_action": {},
   "manifest_version": 2
 }
