@@ -1,0 +1,17 @@
+{
+  "name": "Chromexy",
+  "version": "0.01",
+  "description": "A description for Chromexy",
+  "web_accessible_resources": ["js/*", "assets/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "manifest_version": 2
+}
