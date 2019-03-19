@@ -1,13 +1,32 @@
+import {
+  reactRoot,
+  jssInsertionPoint,
+  styledInsertionPoint,
+} from './shadowRoot'
 import 'typeface-roboto'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Button from '@material-ui/core/Button'
 
 import App from './containers/App'
 import './utils/messageListeners'
 
-const chromexy = document.createElement('div')
-chromexy.setAttribute('id', 'chromext-app')
-document.querySelector('body').appendChild(chromexy)
+import { createGenerateClassName, jssPreset } from '@material-ui/core/styles'
+import { create as createJss } from 'jss'
+import { JssProvider } from 'react-jss'
 
-ReactDOM.render(<App />, document.querySelector('div#chromext-app'))
+import { StyleSheetManager } from 'styled-components'
+
+const jss = createJss({
+  plugins: [...jssPreset().plugins],
+  insertionPoint: jssInsertionPoint,
+})
+const generateClassName = createGenerateClassName()
+
+ReactDOM.render(
+  <JssProvider jss={jss} generateClassName={generateClassName}>
+    <StyleSheetManager target={styledInsertionPoint}>
+      <App />
+    </StyleSheetManager>
+  </JssProvider>,
+  reactRoot
+)
