@@ -2,8 +2,8 @@ const chromexy = document.createElement('div')
 chromexy.setAttribute('id', 'chromexy-app')
 document.querySelector('body').appendChild(chromexy)
 
-chromexy.attachShadow({ mode: 'open' })
-export const shadowRoot = chromexy.shadowRoot
+// chromexy.attachShadow({ mode: 'closed' })
+export const shadowRoot = chromexy.attachShadow({ mode: 'closed' })
 
 export const jssInsertionPoint = document.createElement('noscript')
 jssInsertionPoint.setAttribute('id', 'jss-insertion-point')

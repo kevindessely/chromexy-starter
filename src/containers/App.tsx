@@ -71,6 +71,7 @@ export default class App extends React.Component<Prop, State> {
                 fullWidth
                 margin="normal"
                 variant="outlined"
+                autoFocus
                 InputLabelProps={{ shrink: true }}
               />
               <TextField

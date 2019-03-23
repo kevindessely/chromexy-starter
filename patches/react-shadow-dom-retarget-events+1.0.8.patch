@@ -1,0 +1,21 @@
+diff --git a/node_modules/react-shadow-dom-retarget-events/index.js b/node_modules/react-shadow-dom-retarget-events/index.js
+index e3a8cab..7c2f285 100644
+--- a/node_modules/react-shadow-dom-retarget-events/index.js
++++ b/node_modules/react-shadow-dom-retarget-events/index.js
+@@ -5,7 +5,7 @@ var reactEvents = ["onAbort", "onAnimationCancel", "onAnimationEnd", "onAnimatio
+     "onPointerEnter", "onPointerLeave", "onPointerMove", "onPointerOut", "onPointerOver", "onPointerUp", "onReset",
+     "onResize", "onScroll", "onSelect", "onSelectionChange", "onSelectStart", "onSubmit", "onTouchCancel",
+     "onTouchMove", "onTouchStart", "onTransitionCancel", "onTransitionEnd", "onDrag", "onDragEnd", "onDragEnter",
+-    "onDragExit", "onDragLeave", "onDragOver", "onDragStart", "onDrop", "onFocusOut"];
++    "onDragExit", "onDragLeave", "onDragOver", "onDragStart", "onDrop", "onFocusIn", "onFocusOut"];
+ 
+ var divergentNativeEvents = {
+     onDoubleClick: 'dblclick'
+@@ -14,6 +14,7 @@ var divergentNativeEvents = {
+ var mimickedReactEvents = {
+     onInput: 'onChange',
+     onFocusOut: 'onBlur',
++    onFocusIn: 'onFocus',
+     onSelectionChange: 'onSelect'
+ };
+ 
