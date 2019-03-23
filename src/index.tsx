@@ -8,6 +8,7 @@ import 'typeface-roboto'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import retargetEvents from 'react-shadow-dom-retarget-events'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 import App from './containers/App'
 import './utils/messageListeners'
@@ -33,6 +34,7 @@ ReactDOM.render(
   <JssProvider jss={jss} generateClassName={generateClassName}>
     <StyleSheetManager target={styledInsertionPoint}>
       <MuiThemeProvider theme={createMuiTheme()}>
+        <CssBaseline />
         <App />
       </MuiThemeProvider>
     </StyleSheetManager>
