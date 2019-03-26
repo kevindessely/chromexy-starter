@@ -6,7 +6,8 @@
   "private": false,
   "scripts": {
     "build": "webpack",
-    "build:dev": "webpack --watch"
+    "build:dev": "webpack --watch",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@material-ui/core": "3.9.2",
@@ -17,7 +18,8 @@
     "mobx": "5.9.0",
     "mobx-react": "5.4.3",
     "mobx-state-tree": "3.11.0",
-    "patch-package": "6.0.5",
+    "patch-package": "^6.0.5",
+    "postinstall-postinstall": "^2.0.0",
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "react-jss": "8.6.1",

@@ -3258,7 +3258,7 @@ pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
 
-patch-package@6.0.5:
+patch-package@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-6.0.5.tgz#2ddd34575df098e27e7beb7de67c6d169c323cdb"
   dependencies:
@@ -3394,6 +3394,10 @@ postcss@^7.0.14, postcss@^7.0.5, postcss@^7.0.6:
     chalk "^2.4.2"
     source-map "^0.6.1"
     supports-color "^6.1.0"
+
+postinstall-postinstall@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/postinstall-postinstall/-/postinstall-postinstall-2.0.0.tgz#7ba6711b4420575c4f561638836a81faad47f43f"
 
 prepend-http@^1.0.1:
   version "1.0.4"
