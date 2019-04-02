@@ -1,4 +1,4 @@
-const chromexy = document.createElement('div')
+export const chromexy = document.createElement('div')
 chromexy.setAttribute('id', 'chromexy-app')
 document.querySelector('body').appendChild(chromexy)
 

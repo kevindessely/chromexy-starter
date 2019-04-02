@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "window.zoomLevel": 0,
   "[javascript]": {
-    "editor.formatOnSave": true
+    // "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.formatOnSave": true

@@ -12,8 +12,10 @@
   "dependencies": {
     "@material-ui/core": "3.9.2",
     "@material-ui/icons": "3.0.2",
+    "@material-ui/styles": "3.0.0-alpha.10",
     "classnames": "2.2.6",
     "core-decorators": "0.20.0",
+    "jss-rtl": "0.2.3",
     "lodash": "4.17.11",
     "mobx": "5.9.0",
     "mobx-react": "5.4.3",
@@ -22,6 +24,7 @@
     "postinstall-postinstall": "^2.0.0",
     "react": "16.8.4",
     "react-dom": "16.8.4",
+    "react-frame-component": "4.1.0",
     "react-jss": "8.6.1",
     "react-shadow-dom-retarget-events": "1.0.8",
     "styled-components": "4.1.3",

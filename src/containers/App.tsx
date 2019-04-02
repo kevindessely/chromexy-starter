@@ -39,13 +39,7 @@ const styles = ({ spacing }: Theme) =>
       position: 'fixed',
       top: 0,
       bottom: 0,
-      width: '480px',
-    },
-    panelRight: {
-      right: 0,
-    },
-    panelLeft: {
-      left: 0,
+      width: '100%',
     },
     toolbarRight: {
       flexDirection: 'row-reverse',
@@ -74,17 +68,12 @@ export default class App extends React.Component<Prop, State> {
 
     if (!UI.showApp) return null
 
-    const panelClasses = classnames(
-      classes.panel,
-      get(classes, camelCase(['panel', UI.appLocation].join('-')))
-    )
-
     const isRightToolbar = UI.appLocation === 'right'
     const toolbarClasses = isRightToolbar ? classes.toolbarRight : null
 
     return (
       <div className={classes.root}>
-        <Paper square className={panelClasses}>
+        <Paper square className={classes.panel}>
           <AppBar position="relative">
             <Toolbar className={toolbarClasses}>
               <div className={isRightToolbar ? null : classes.grow}>
@@ -114,7 +103,9 @@ export default class App extends React.Component<Prop, State> {
               </Typography>
               <Typography variant="body1" gutterBottom>
                 Don't have an account?&nbsp;
-                <Link href="https://google.com/">Create your account</Link>
+                <Link target="_parent" href="https://google.com/">
+                  Create your account
+                </Link>
               </Typography>
             </Grid>
             <Grid item xs={12} className={classes.formContainer}>
@@ -147,7 +138,11 @@ export default class App extends React.Component<Prop, State> {
                     control={<Checkbox value="remember-me" />}
                     label="Remember Me"
                   />
-                  <Link href="https://google.com/">Forgot Password?</Link>
+                  <Typography variant="body1">
+                    <Link target="_parent" href="https://google.com/">
+                      Forgot Password?
+                    </Link>
+                  </Typography>
                 </Grid>
                 <Grid item container justify="flex-end">
                   <Button size="large" variant="contained" color="secondary">

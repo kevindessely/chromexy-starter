@@ -1,45 +1,23 @@
-import {
-  reactRoot,
-  jssInsertionPoint,
-  styledInsertionPoint,
-  shadowRoot,
-} from './shadowRoot'
+import './install'
 import 'typeface-roboto'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import retargetEvents from 'react-shadow-dom-retarget-events'
-import CssBaseline from '@material-ui/core/CssBaseline'
 
 import App from './containers/App'
-import './utils/messageListeners'
+import FrameApp from './containers/FrameApp'
 
-import {
-  createGenerateClassName,
-  jssPreset,
-  MuiThemeProvider,
-  createMuiTheme,
-} from '@material-ui/core/styles'
-import { create as createJss } from 'jss'
-import { JssProvider } from 'react-jss'
-
-import { StyleSheetManager } from 'styled-components'
-
-const jss = createJss({
-  plugins: [...jssPreset().plugins],
-  insertionPoint: reactRoot,
-})
-const generateClassName = createGenerateClassName()
+const chromexy = document.createElement('div')
+chromexy.setAttribute('id', 'chromexy-app')
+chromexy.style.width = '0'
+chromexy.style.height = '0'
+chromexy.style.zIndex = '2147659323'
+document.querySelector('body').appendChild(chromexy)
 
 ReactDOM.render(
-  <JssProvider jss={jss} generateClassName={generateClassName}>
-    <StyleSheetManager target={styledInsertionPoint}>
-      <MuiThemeProvider theme={createMuiTheme()}>
-        <CssBaseline />
-        <App />
-      </MuiThemeProvider>
-    </StyleSheetManager>
-  </JssProvider>,
-  reactRoot
+  <div>
+    <FrameApp>
+      <App />
+    </FrameApp>
+  </div>,
+  chromexy
 )
-
-retargetEvents(shadowRoot)
